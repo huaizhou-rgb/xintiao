@@ -1,0 +1,108 @@
+/* 自定义动画 */
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+}
+
+.animate-fade-out {
+    animation: fade-out 0.3s ease-out;
+}
+
+/* 数字滚动效果 */
+#moneyDisplay {
+    font-variant-numeric: tabular-nums;
+    transition: transform 0.1s ease-out;
+}
+
+/* 平滑滚动 */
+#moneyDisplay::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+}
+
+/* 响应式字体大小 */
+@media (max-width: 640px) {
+    #moneyDisplay {
+        font-size: 3rem;
+    }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 键盘按键样式 */
+kbd {
+    font-family: monospace;
+    font-size: 0.875rem;
+}
+
+/* 模态框动画 */
+#settingsModal {
+    animation: fade-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 输入框焦点样式 */
+input:focus {
+    outline: none;
+}
+
+/* 按钮点击效果 */
+button:active {
+    transform: scale(0.98);
+}
+
+/* 数字显示优化 */
+.font-mono {
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+}
+
